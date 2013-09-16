@@ -15,8 +15,37 @@ After the header, each line represents an entry with space sepparated elements.
 
 label conventions
 ------------------
+Labels can be strings of any length. If a label has both a start and a stop time, 
+the start label is an entry with '-0' appended to it, while the stop label has '-1' appended.
+
+example lbl file
+-------------------
+    signal feasd
+    type 0
+    color 121
+    font *-fixed-bold-*-*-*-15-*-*-*-*-*-*-*
+    separator ;
+    nfields 1
+    #
+       15.445851  121 A
+       15.520200  121 a-0
+       15.595700  121 a-1
+       15.747526  121 a-0
+       15.818300  121 a-1
+       15.928394  121 a-0
+       15.991940  121 a-1
+       16.053200  121 b-0
+       16.192361  121 b-1
+       16.230769  121 c-0
+       16.350176  121 c-1
+       16.395300  121 d-0
+       16.740300  121 d-1
+       16.847382  121 V
+       17.010093  121 C
+
+
 
 requirements
 ------------
-*python 2.x
-*numpy
+* python 2.x, though 3.x should be a simple port
+* numpy
