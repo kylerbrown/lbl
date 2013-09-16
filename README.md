@@ -12,7 +12,7 @@ Typical usage:
     lbldata = lbl.read('this/is/a_lbl_file.lbl')        #  returns a rec array
     abcd_intervals = lbl.find_seq(lbldata, 'abcd')  #  returns a list of time intervals
 
-what are lbl files?
+What are lbl files?
 --------------------
 The lbl standard using the following format:
 * 7 lines of garbage (the header)
@@ -22,12 +22,12 @@ After the header, each line represents an entry with space separated elements.
 * the second element is garbage (the number 121)
 * the third element is the label or name.
 
-label conventions
+Label conventions
 ------------------
 Labels can be strings of any length. If a label has both a start and a stop time, 
 the start label is an entry with '-0' appended to it, while the stop label has '-1' appended.
 
-example lbl file
+Example lbl file
 -------------------
     signal feasd
     type 0
@@ -54,12 +54,12 @@ example lbl file
 
 
 
-requirements
+Requirements
 ------------
 * python 2.x, though 3.x should be a simple port
 * numpy
 
-installation
+Installation
 -------------
     git clone https://github.com/kylerbrown/lbl.git
     cd lbl
