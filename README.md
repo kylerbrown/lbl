@@ -56,7 +56,6 @@ Example lbl file
 
 Requirements
 ------------
-* python 2.x, though 3.x should be a simple port
 * numpy
 
 Installation
