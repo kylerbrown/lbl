@@ -2,7 +2,7 @@ lbl
 ===
 
 A python library for reading/writing and manipulating lbl files.
-Lbl files are represented within python as a numpy record array.
+Lbl files are represented within python as a numpy record array with fields 'name', 'start', and 'stop'.
 
 Typical usage:
 ---------------
