@@ -1,7 +1,15 @@
 lbl
 ===
 
-A python library for reading/writing and manipulating lbl files
+A python library for reading/writing and manipulating lbl files.
+Lbl files are represented within python as a numpy record array.
+
+Typical usage:
+---------------
+
+    import lbl
+    lbldata = lbl.read('this/is/a_lbl_file.lbl')        #  returns a rec array
+    abcd_intervals = lbl.find_seq(lbldata, 'abcd')  #  returns a list of time intervals
 
 what are lbl files?
 --------------------
@@ -49,3 +57,9 @@ requirements
 ------------
 * python 2.x, though 3.x should be a simple port
 * numpy
+
+installation
+-------------
+    git clone https://github.com/kylerbrown/lbl.git
+    cd lbl
+    python setup.py install
