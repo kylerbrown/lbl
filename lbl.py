@@ -10,7 +10,7 @@ abcd_intervals = find_seq(read(this/is/a_lbl_file.lbl), 'abcd')
 import numpy as np
 import re
 
-__version__ = '0.1'
+__version__ = '0.1.1'
 
 def read(fname):
     '''reads in a lbl file named fname to a list'''
@@ -36,8 +36,12 @@ def read(fname):
         else:  # no associated offset
             labels.append(label)
             times.append([start, start])
-    dtype = [('name', np.unicode_, max([len(x) for x in labels])),
+    dtype = [('name', 'a' + str(max([len(x) for x in labels]))),
              ('start', float), ('stop', float)]
+    print('''wah-boo!
+
+
+          BAH!''')
     return np.array([(l, sta, sto) for l, (sta, sto) in zip(labels, times)],
                     dtype=dtype)
 
