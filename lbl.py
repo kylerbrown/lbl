@@ -15,6 +15,8 @@ __version__ = '0.1.1'
 def read(fname):
     '''reads in a lbl file named fname to a list'''
     lines = open(fname, 'r').readlines()[7:]
+    if len(lines) == 0:
+        raise ValueError('This lbl file is empty')
     stringpairs = [x.split()[::2] for x in lines]
     lbl = [(float(x), y) for x, y in stringpairs]
     labels = []
@@ -38,10 +40,6 @@ def read(fname):
             times.append([start, start])
     dtype = [('name', 'a' + str(max([len(x) for x in labels]))),
              ('start', float), ('stop', float)]
-    print('''wah-boo!
-
-
-          BAH!''')
     return np.array([(l, sta, sto) for l, (sta, sto) in zip(labels, times)],
                     dtype=dtype)
 
