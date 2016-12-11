@@ -1,4 +1,5 @@
 '''tests for the lbl python library'''
+from __future__ import unicode_literals, print_function, absolute_import, division
 import lbl
 import numpy as np
 import os.path
@@ -13,6 +14,7 @@ def test_writeread(tmpdir):
                     dtype=dtype)
     lbl.write(fname, rec_array)
     rec_array2 = lbl.read(fname)
-    assert ''.join(rec_array['name']) == ''.join(rec_array2['name']), 'label names do not match'
+    for x, y in zip(rec_array['name'], rec_array2['name']):
+        assert x == y, 'label named do not match'
     assert np.all(np.isclose(rec_array['start'], rec_array2['start'])), 'starts do not match'
     assert np.all(np.isclose(rec_array['stop'], rec_array2['stop'])), 'stops do not match'

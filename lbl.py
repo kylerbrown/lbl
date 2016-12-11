@@ -7,6 +7,7 @@ For events with no explicit stop, stop = start.
 typical use:
 abcd_intervals = find_seq(read(this/is/a_lbl_file.lbl), 'abcd')
 '''
+from __future__ import unicode_literals, print_function, absolute_import, division
 import numpy as np
 import re
 
@@ -38,7 +39,7 @@ def read(fname):
         else:  # no associated offset
             labels.append(label)
             times.append([start, start])
-    dtype = [('name', 'a' + str(max([len(x) for x in labels]))),
+    dtype = [('name', 'U' + str(max([len(x) for x in labels]))),
              ('start', float), ('stop', float)]
     return np.array([(l, sta, sto) for l, (sta, sto) in zip(labels, times)],
                     dtype=dtype)
