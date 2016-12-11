@@ -14,7 +14,7 @@ Typical usage:
 
 What are lbl files?
 --------------------
-The lbl standard using the following format:
+The lbl standard uses the following format:
 * 7 lines of garbage (the header)
 
 After the header, each line represents an entry with space separated elements.
